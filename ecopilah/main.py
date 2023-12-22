@@ -26,6 +26,11 @@ def predict_image(img_path):
     predicted_class = np.argmax(predictions[0])
     return predicted_class
 
+# Endpoint untuk tampilan teks pada localhost:5000/
+@app.route('/')
+def home():
+    return 'Selamat datang di ecoPilah'
+
 # Endpoint untuk melakukan klasifikasi
 @app.route('/predict', methods=['POST'])
 def predict():
